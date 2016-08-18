@@ -11,7 +11,8 @@ def pltmap(C, H, pcA, pcB):
     fig = plt.figure(figsize=[7.5, 5])
 
     """define the colors of interest"""
-    n_col = len(C['set_id_val'])-len(C['set_id_cal'])
+    n_col = len(np.unique(C['set_id_cal'] + C['set_id_val'])) - \
+        len(C['set_id_cal'])
     colormat = cm.rainbow(np.linspace(0, 1, n_col))
     gray = [.7, .7, .7]
 
@@ -33,6 +34,13 @@ def pltmap(C, H, pcA, pcB):
         plt.plot(meanA, meanB,
                  marker='s', markersize=8, color=gray,
                  linestyle='')
+        # plt.text(txtm[ii, 0], txtm[ii, 1], C['names_val'][ii],
+        #          horizontalalignment='center',
+        #          verticalalignment='center')
+        plt.text(meanA, meanB, C['names_cal'][ii],
+                 horizontalalignment='center',
+                 verticalalignment='center')
+
 
         # varmat = np.var(reduced, axis=0)
         # msg = "total variance for %s: %s" % (set_id, varmat.sum())
@@ -51,14 +59,6 @@ def pltmap(C, H, pcA, pcB):
         meanA = reduced[:, pcA].mean()
         meanB = reduced[:, pcB].mean()
 
-        plt.text(meanA, meanB+4, C['names_val'][ii],
-                 horizontalalignment='center',
-                 verticalalignment='center')
-
-        # plt.text(txtm[ii, 0], txtm[ii, 1], C['names_val'][ii],
-        #          horizontalalignment='center',
-        #          verticalalignment='center')
-
         if np.any(np.array(C['names_cal']) == name):
             plt.plot(reduced[:, pcA], reduced[:, pcB],
                      marker='o', markersize=6, color=gray,
@@ -73,6 +73,12 @@ def pltmap(C, H, pcA, pcB):
             plt.plot(meanA, meanB,
                      marker='o', markersize=8, color=colormat[c, :],
                      linestyle='')
+            # plt.text(txtm[ii, 0], txtm[ii, 1], C['names_val'][ii],
+            #          horizontalalignment='center',
+            #          verticalalignment='center')
+            plt.text(meanA, meanB, C['names_val'][ii],
+                     horizontalalignment='center',
+                     verticalalignment='center')
             c += 1
 
         # varmat = np.var(reduced, axis=0)

@@ -8,7 +8,8 @@ import h5py
 def plot_check(C, par, n_pc, n_poly, H, erv):
 
     """define the colors of interest"""
-    n_col = len(C['set_id_val'])-len(C['set_id_cal'])
+    n_col = len(np.unique(C['set_id_cal'] + C['set_id_val'])) - \
+        len(C['set_id_cal'])
     colormat = cm.rainbow(np.linspace(0, 1, n_col))
     gray = [.7, .7, .7]
 
