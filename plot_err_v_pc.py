@@ -12,7 +12,7 @@ def plterr(C, par, n_pc_max, upbnd, Tvec, Hvec):
     # colormat = cm.rainbow(np.linspace(0, .9, len(Hvec)))
     linemat = ['-', '--', ':']
 
-    fig, ax = plt.subplots(figsize=[7, 5])
+    fig, ax = plt.subplots(figsize=[6, 4])
 
     for ii in xrange(len(Hvec)):
         for jj in xrange(len(Tvec)):
@@ -61,10 +61,10 @@ def plterr(C, par, n_pc_max, upbnd, Tvec, Hvec):
 
     plt.axis([.5, n_pc_max+.5, 0, upbnd])
 
-    plt.legend(loc='upper right', shadow=True, fontsize='small', ncol=3)
+    plt.legend(loc='upper right', shadow=True, fontsize='large', ncol=1)
 
-    plt.xlabel("number of PCs")
-    plt.ylabel("mean error (%)")
+    plt.xlabel("number of PCs", fontsize='large')
+    plt.ylabel("mean error (%)", fontsize='large')
 
     plt.tight_layout()
 

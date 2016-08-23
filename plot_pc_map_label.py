@@ -87,8 +87,8 @@ def pltmap(C, H, pcA, pcB):
 
     plt.margins(.2)
 
-    plt.xlabel("PC%s" % str(pcA+1))
-    plt.ylabel("PC%s" % str(pcB+1))
+    plt.xlabel("PC%s" % str(pcA+1), fontsize='large')
+    plt.ylabel("PC%s" % str(pcB+1), fontsize='large')
 
     plt.grid(linestyle='-', alpha=0.15)
 
@@ -97,7 +97,7 @@ def pltmap(C, H, pcA, pcB):
                   color=gray, linestyle='', label='calibration')
     p2 = plt.plot(0, 0, marker='o', markersize=6,
                   color=gray, linestyle='', label='validation')
-    plt.legend(shadow=True, fontsize='medium', ncol=2)
+    plt.legend(shadow=True, fontsize='large', ncol=2)
     p1[0].remove()
     p2[0].remove()
 

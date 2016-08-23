@@ -32,11 +32,11 @@ def variance(C, pltshape, Hvec):
 
     plt.axis(pltshape)
 
-    plt.xlabel('pc number')
-    plt.ylabel('pca cumulative explained variance (%)')
+    plt.xlabel('PC number', fontsize='large')
+    plt.ylabel('PCA cumulative explained variance (%)', fontsize='large')
 
     plt.grid(linestyle='-', alpha=0.15)
-    plt.legend(loc='lower right', shadow=True, fontsize='medium')
+    plt.legend(loc='lower right', shadow=True, fontsize='large')
 
     plt.tight_layout()
 

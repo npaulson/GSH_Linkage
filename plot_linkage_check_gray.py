@@ -153,11 +153,11 @@ def plot_check(C, par, n_pc, n_poly, H, erv):
     plt.axes().set_aspect('equal')
 
     if par == 'modulus':
-        plt.xlabel("simulation (GPa)")
-        plt.ylabel("prediction (GPa)")
+        plt.xlabel("simulation (GPa)", fontsize='large')
+        plt.ylabel("prediction (GPa)", fontsize='large')
     else:
-        plt.xlabel("simulation (MPa)")
-        plt.ylabel("prediction (MPa)")
+        plt.xlabel("simulation (MPa)", fontsize='large')
+        plt.ylabel("prediction (MPa)", fontsize='large')
 
     # plt.legend(loc='upper left', shadow=True, fontsize='medium')
 
