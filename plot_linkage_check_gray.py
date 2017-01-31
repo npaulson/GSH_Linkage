@@ -40,9 +40,6 @@ def plot_check(C, par, n_pc, n_poly, H, erv):
     # indx = np.argmin(f_reg.get('loocv_err_%s' % par))
     # n_pc = order[indx, 0]
 
-    print par
-    print "n_pc, n_poly: %s" % str(order[indx, :])
-
     """find the results associated with the desired n_pc, n_poly"""
 
     """load the simulated and predicted responses"""
@@ -58,15 +55,17 @@ def plot_check(C, par, n_pc, n_poly, H, erv):
         RsimV = f_reg.get('Rsim_val_%s' % par)[...]
         RpredV = f_reg.get('Rpred_val_%s' % par)[indx, :]
 
-    """write out the associated error"""
     n_fac = RsimC.mean()
 
-    errC = 100.*np.abs(RpredC-RsimC)/n_fac
-    print "mean %% error for cal: %s" % errC.mean()
-    print "max %% error for cal: %s" % errC.max()
-    errV = 100.*np.abs(RpredV-RsimV)/n_fac
-    print "mean %% error for val: %s" % errV.mean()
-    print "max %% error for val: %s" % errV.max()
+    # """write out the associated error"""
+    # errC = 100.*np.abs(RpredC-RsimC)/n_fac
+    # errV = 100.*np.abs(RpredV-RsimV)/n_fac
+    # print par
+    # print "n_pc, n_poly: %s" % str(order[indx, :])
+    # print "mean %% error for cal: %s" % errC.mean()
+    # print "max %% error for cal: %s" % errC.max()
+    # print "mean %% error for val: %s" % errV.mean()
+    # print "max %% error for val: %s" % errV.max()
 
     """plot the prediction equal to simulation line"""
     fig = plt.figure(figsize=[6, 5.75])
